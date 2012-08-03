@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Fill the form below to login in the system ;)</p>
+
+<form method="post" action="{% url django.contrib.auth.views.login %}">{% csrf_token %}
+<table>
+{% for error in form.non_field_errors %}
+    <tr><td>{{ error }}</td></tr>
+{% endfor %}
+
+{% for field in form %}
+    {% for error in form.username.errors %}
+    <tr><td>{{ error }}</td></tr>
+    {% endfor %}
+    <tr><th>{{ field.label_tag }}:</th><td>{{ field }}</td></td>
+{% endfor %}
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}

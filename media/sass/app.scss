@@ -1,0 +1,352 @@
+// Compass imports
+@import "compass/css3"; 
+@import "compass/utilities";
+
+$shaded: #f4f4f4;
+
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Header
+:: Navigation
+:: Content
+:: Footer
+:: Helpers
+:: Mobile
+::   Shared Styles
+::   Header
+::   Content
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+@import url(http://fonts.googleapis.com/css?family=Bitter);
+
+html {
+
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font:  {
+    family: 'Bitter', Georgia, "Times New Roman", Times, serif;
+    size: 0.75em; /* 16 * 0.75 = 12 */
+  }
+  position: static;
+}
+
+  .container {
+    padding: 1;
+  }
+  
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: #555;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+h1, .h1 {
+  font-size: 1.5em; /* 24px --> 24 ÷ 16 = 1.5 */
+  line-height: 1em; /* 24px --> 24 ÷ 24 = 1 */
+  margin: 14px 0 0;
+}
+h2, .h2 {
+  font-size: 1.375em; /* 22px --> 22 ÷ 16 = 1.375 */
+  line-height: 1.0909em; /* 24px --> 24 ÷ 22 = 1.090909(09) */
+  
+  &.underline {
+    @extend .underline;
+    padding-bottom: 14px;
+  }
+  &.underline-light {
+    @extend .underline;
+    border-bottom: 1px solid $shaded;
+  }
+}
+h3, .h3 {
+  font-size: 1.25em; /* 20px --> 20 ÷ 16 = 1.25 */
+  line-height: 1.2em; /* 24px --> 24 ÷ 20 = 1.2 */
+  
+  &:before { 
+    display: block; 
+    content: " "; 
+    margin-top: -100px; 
+    height: 100px;
+    visibility: hidden; 
+  }
+}
+h4, .h4 {
+  //color: #7f7f7f;
+  font-size: 1.125em; /* 18px --> 18 ÷ 16 = 1.125 */
+  font-style: italic;
+  line-height: 1.333em; /* 24px --> 24 ÷ 18 = 1.3333333(3) */
+}
+h5, .h5,
+h6, .h6 {
+  font-size: 1em; /* 16px --> 16 ÷ 16 = 1 */
+  line-height: 1.5em; /* 24px --> 24 ÷ 16 = 1.5 */
+}
+
+a {
+
+  &[href^="http"]:after {
+    content: " " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);
+  }
+}
+
+
+p {
+  font-size: inherit;
+}
+
+ul {
+  
+  li {
+    list-style-position: outside;
+    margin: 0 0 0 14px;
+  }
+}
+
+
+
+/* -----------------------------------------
+  Header
+----------------------------------------- */
+
+.header {
+  @include box-shadow(#ccc 0px 5px 25px);
+  background-color: $shaded;
+  padding: 10px 40px;
+  position: fixed;
+    top: 0;
+    left: 0;
+  z-index: 1;
+  
+  img {
+    width: 150px;
+  }
+}
+
+
+
+/* -----------------------------------------
+  Navigation
+----------------------------------------- */
+
+.navigation {
+
+  ul {
+    margin-bottom: 20px;
+    
+    li {
+      margin: 10;
+      
+      a {
+        
+        &:hover {
+          background-color: #ccc;
+        }
+      }
+    }
+  }
+}
+
+
+
+/* -----------------------------------------
+  Content
+----------------------------------------- */
+
+.content {
+  background-color: #fff;
+  padding: 75px 40px 50px;
+  
+  code {
+    @include border-radius(5px);
+  }
+  
+  .code-sample {
+    @extend code; 
+    background-color: $shaded;
+    margin: 0 0 10px;
+  }
+  .correct {
+    @extend .code-sample;
+    background-color: #e4f4e1;
+    
+    code {
+      background-color: #fff;
+    }
+  }
+  .incorrect {
+    @extend .code-sample;
+    background-color: #f4e1e1;
+    
+    code {
+      background-color: #fff;
+    }
+  }
+  
+  section {
+    @extend .underline;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    
+    &:last-child {
+      border: none;
+      margin-bottom: 0;
+      padding-bottom: 6px;
+    }
+  }
+  
+  h4.sample-heading {
+    margin-bottom: -7px;
+  }
+  
+  figure {
+    //@include box-shadow(rgba(#ccc, 0.4) 0 0 25px);
+    @include border-radius(5px);
+    border: 2px solid $shaded;
+    padding: 10px;
+    
+    a {
+      margin: 0;
+    
+      img {
+        border: 1px solid #eee;
+      }
+    }
+    
+    figcaption {
+      font-style: italic;
+      margin: 10px 0 0;
+      text-align: left;
+    }
+  }
+}
+
+
+
+/* -----------------------------------------
+  Footer
+----------------------------------------- */
+
+.footer {
+  background-color: #555;
+  color: #fff;
+  padding: 20px 40px;
+  position: fixed;
+      bottom: 0;
+      left: 0;
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  h4 {
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 0 20px;
+    padding: 0 0 10px;
+  }
+  
+  a {
+    color: #ccc;
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/* -----------------------------------------
+   Helpers
+----------------------------------------- */
+
+.underline {
+  border-bottom: 1px solid #ccc;
+}
+
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+.image-right img {
+  float: right;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+
+
+/* -----------------------------------------
+   Mobile
+----------------------------------------- */
+
+@media handheld, only screen and (max-width: 767px) {
+
+  /* -----------------------------------------
+     Shared Styles
+  ----------------------------------------- */
+  
+  h3, .h3 {
+    
+    &:before { 
+      margin-top: -30px; 
+      height: 30px;
+    }
+  }
+  
+  
+  
+  /* -----------------------------------------
+    Header
+  ----------------------------------------- */
+  
+  .header {
+    padding: 0;
+    position: relative;
+  }
+  
+  
+  
+  /* -----------------------------------------
+    Content
+  ----------------------------------------- */
+  
+  .content {
+    padding: 0;
+      
+    figure {
+      margin: 0;
+    }
+    
+    code {
+      overflow: auto;
+    }
+    
+  }
+
+}

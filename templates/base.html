@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{% firstof LANGUAGE_CODE 'en' %}"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="{% firstof LANGUAGE_CODE 'en' %}"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="{% firstof LANGUAGE_CODE 'en' %}"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{% firstof LANGUAGE_CODE 'en' %}"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+	
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{% block title %}{% endblock %} - Nonrel-testapp</title>
+    
+    <!-- Included CSS Files -->
+    <link rel="stylesheet" href="/media/stylesheets/foundation.css">
+    <link rel="stylesheet" href="/media/stylesheets/jquery.fancybox.css?v=2.0.6" media="screen" />
+    <link rel="stylesheet" href="/media/stylesheets/github.css">
+    <link rel="stylesheet" href="/media/stylesheets/app.css">
+    {% block css %}{% endblock %}
+  
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="/media/stylesheets/ie.css">
+    <![endif]-->
+    
+    <script src="javascripts/foundation/modernizr.foundation.js"></script>
+    
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  
+    {% block preload_js %}{% endblock %}
+    
+    {% block extra-head %}{% endblock %}
+  </head>
+
+  <body>
+    <header class="row header">
+      <div class="four columns">
+        <h1>CSS Formatting Guidelines</h1>
+      </div>
+      
+      <div class="six columns navigation">
+        <ul class="block-grid mobile five-up right">
+          <li>
+            <a href="#" class="slideshow">Slideshow</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="two columns text-right hide-for-small">
+        <img src="images/stripe-logo.png" alt="Stripe Consulting" class="hide" />
+      </div>
+    </header>
+     
+    <div class="row content">
+      <div class="twelve columns">
+      
+        {% block content-header %}
+          {% if error %}<div class="error">{{ error }}</div>{% endif %}
+          {% if info %}<div class="info">{{ info }}</div>{% endif %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="info">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endblock %}
+
+        {% block content %}{% endblock %}
+      </div>
+      
+      <!--<div id="sidebar" class="column">
+      {% block sidebar %}
+      {% endblock %}
+      </div>-->
+    </div>
+    
+    <div class="row footer hide-for-small">
+      <div class="twelve columns">
+        
+        <p>&copy; Damian 2012 - Best Practices</p>
+        
+      </div>
+    </div>
+    
+    <!-- Included JS Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/media/javascripts/highlight.pack.js"></script>
+    <script src="/media/javascripts/jquery.fancybox.pack.js?v=2.0.6"></script>
+    <script src="/media/javascripts/stripe.js"></script>
+    <script src="/media/javascripts/app.js"></script>
+    
+    <!-- Excluded JS Files
+    <script src="javascripts/foundation/jquery.reveal.js"></script>
+    <script src="javascripts/foundation/jquery.orbit-1.4.0.js"></script>
+    <script src="javascripts/foundation/jquery.customforms.js"></script>
+    <script src="javascripts/foundation/jquery.placeholder.min.js"></script>
+    <script src="javascripts/foundation/jquery.tooltips.js"></script>
+     -->
+
+    {% block js %}{% endblock %}
+  </body>
+</html>
