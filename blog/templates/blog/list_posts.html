@@ -13,7 +13,7 @@
         {{ post.content }}
         {% endautoescape %}
         
-        <p>Written by {{ post.created_by.username }}, {{ post.date|date:"F j, Y" }}</p>
+        <p>Written by {{ post.created_by.username }}, {{ post.created|date:"F j, Y" }}</p>
     </article>
     {% endfor %}
 {% endblock %}
