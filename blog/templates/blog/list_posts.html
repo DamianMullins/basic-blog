@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block heading %}Posts{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+    <article>
+        <h2><a href="/post/{{ post.url }}/">{{ post.title }}</a></h2>
+        
+        {% autoescape off %}
+        {{ post.content }}
+        {% endautoescape %}
+        
+        <p>Written by {{ post.created_by.username }}, {{ post.date|date:"F j, Y" }}</p>
+    </article>
+    {% endfor %}
+{% endblock %}

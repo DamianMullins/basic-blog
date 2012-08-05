@@ -132,6 +132,14 @@ ul {
     left: 0;
   z-index: 1;
   
+  h1 {
+    margin-top: 10px;
+    
+    a {
+        color: #333;
+    }
+  }
+  
   img {
     width: 150px;
   }
@@ -146,12 +154,19 @@ ul {
 .navigation {
 
   ul {
-    margin-bottom: 20px;
+    background-color: transparent;
+    margin: 0;
     
     li {
+      border: none;
       margin: 10;
       
+      &:last-child {
+        border: none;
+      }
+      
       a {
+          color: #333;
         
         &:hover {
           background-color: #ccc;
