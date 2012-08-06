@@ -28,7 +28,7 @@ $shaded: #f4f4f4;
 @import url(http://fonts.googleapis.com/css?family=Bitter);
 
 html {
-   background-color: #555;
+  
 }
 
 body {
@@ -128,9 +128,6 @@ ul {
   @include box-shadow(#ccc 0px 5px 25px);
   background-color: $shaded;
   padding: 10px 40px;
-  position: fixed;
-    top: 0;
-    left: 0;
   z-index: 1;
   
   h1 {
@@ -189,21 +186,31 @@ ul {
 
 .content {
   background-color: #fff;
-  padding: 75px 0 50px 40px;
-  
-  h2 {
-    margin-bottom: 5px;
-    
-    a {
-    
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
+  padding: 55px 0 50px 40px;
   
   article {
     
+    
+    &:hover a.edit-post {
+      display: inline-block;
+    }
+      
+    h2 {
+      margin: 0 0 5px;
+      
+      a {
+      
+        &:hover {
+          text-decoration: underline;
+        }
+        
+        &.edit-post {
+          display: none;
+          float: right;
+          font-size: 0.6em;
+        }
+      }
+    }
   }
   
   .post-list {
@@ -235,7 +242,7 @@ ul {
   ----------------------------------------- */
   
   .sidebar {
-    background-color: #ccc;
+    background-color: #f4f4f4;
   }
 }
 
@@ -246,12 +253,11 @@ ul {
 ----------------------------------------- */
 
 .footer {
-  background-color: #555;
-  color: #fff;
+  //@include box-shadow(#ccc 0px 5px 25px);
+  background-color: #f4f4f4;
+  border-top: 1px solid #f4f4f4;
+  color: #333;
   padding: 20px 40px;
-  //position: fixed;
-  //    bottom: 0;
-  //    left: 0;
   
   ul {
     list-style-type: none;
