@@ -16,3 +16,23 @@ class PostForm(forms.ModelForm):
             post.save()
 
         return post
+        
+        
+    def clean_url(self):
+    """
+    Check that submitted URL is unique and allowed
+    """
+        INVALID_URLS = ('about', 'admin', 'register')    
+        url = self.cleaned_data['url']
+        
+        try:
+            post = Post.objects.get(url=url)
+        except Post.DoesNotExist:
+            pass
+        else:
+            raise forms.ValidationError(u'%s already exists' % post )
+    
+        if url in INVALID_URLS:
+            raise forms.ValidationError(u'%s is not a valid url' % url )
+    
+        return url
