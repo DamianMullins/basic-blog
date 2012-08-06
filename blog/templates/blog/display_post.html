@@ -11,7 +11,7 @@
   <div class="meta h2">
     <div class="who-when">
       <span class="author vcard fn">{{ post.created_by.username|capfirst }}</span>
-      <span class="published" title="{{ post.created|date:"c" }}">{{ post.created|date:"F d, Y" }}</span>
+      <span class="published" title="{{ post.pub_date|date:"c" }}">{{ post.pub_date|date:"F d, Y" }}</span>
     </div>
   </div>
   
