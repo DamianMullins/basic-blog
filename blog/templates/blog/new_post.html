@@ -27,24 +27,22 @@
 
 <script>
 var myEditor = new YAHOO.widget.SimpleEditor('id_content', {
-    height: '200px',
-    width: '100%',
-    handleSubmit: true, 
-    toolbar: {
-        //titlebar: 'My Editor',
+  height: '200px',
+  width: '100%',
+  handleSubmit: true, 
+  toolbar: {
+    //titlebar: 'My Editor',
+    buttons: [
+      { group: 'textstyle', label: 'Font Style',
         buttons: [
-            { group: 'textstyle', label: 'Font Style',
-                buttons: [
-                    { type: 'push', label: 'Bold', value: 'bold' },
-                    { type: 'push', label: 'Italic', value: 'italic' },
-                    { type: 'push', label: 'Underline', value: 'underline' }
-                ]
-            }
+          { type: 'push', label: 'Bold', value: 'bold' },
+          { type: 'push', label: 'Italic', value: 'italic' },
+          { type: 'push', label: 'Underline', value: 'underline' }
         ]
-    }
+      }
+    ]
+  }
 });
 myEditor.render();
-
-
 </script>
 {% endblock %}
