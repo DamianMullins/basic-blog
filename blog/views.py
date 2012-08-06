@@ -33,7 +33,7 @@ def edit_post(request, post_url):
 """
 
 def list_posts(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-pub_date')
     return render_to_response('blog/list_posts.html', 
                                 locals(), context_instance=RequestContext(request))
     
