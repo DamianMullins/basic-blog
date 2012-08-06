@@ -3,7 +3,7 @@ from blog import views
 
 urlpatterns = patterns('blog.views', 
     url(r'^$', 'list_posts'),
-    url(r'^post/(?P<post_url>[-\w]+)/$', 'display_post'),
+    url(r'^(?P<post_url>[-\w]+)/$', 'display_post'),
     url(r'^new/$', 'new_post'),
 )
 
