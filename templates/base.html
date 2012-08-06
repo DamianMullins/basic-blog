@@ -1,155 +1,151 @@
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{% firstof LANGUAGE_CODE 'en' %}"> <![endif]-->
-<!--[if IE 7]>        <html class="no-js lt-ie9 lt-ie8" lang="{% firstof LANGUAGE_CODE 'en' %}"> <![endif]-->
-<!--[if IE 8]>        <html class="no-js lt-ie9" lang="{% firstof LANGUAGE_CODE 'en' %}"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="{% firstof LANGUAGE_CODE 'en' %}"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="{% firstof LANGUAGE_CODE 'en' %}"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="{% firstof LANGUAGE_CODE 'en' %}"> <!--<![endif]-->
 <head>
-        <meta charset="utf-8" />
-        <!--                                                 /G
-                                                            (8/
-                                                           XBBV
-              :GggB3~                                     <B$$0
-             (G0$@@@$0%(                                ^%$$$B3
-             ^<  <B@@@$03X                             ^B$$$B0^
-                   /g@@$$$8                           `g$$BG%`
-                     8@@$$0^                         (0$$B03`
-                     `$@$Bg                        ^3B$$B0G^
-                      /$B0g                        V0$$$Bg~
-                       8gX/(                       0$$$$BG
-                       (B0003                     (B$$$$B3
-                        3$$$8X                    XB$$$00(
-                         %BB8%                    %$$$00%
-                         `88V                     G0$00V
-                          /C%X^                  ^G0Cg/
-                           g00B8(                <8V8/
-                           X0%Gg00C              ```<
-                           `B$B8G%%X        `  `  ^%^
-                            (BB3^`  <^  `` `/(``<VBg
-                             0g<<<<. `    ` ``<VG8G0(
-                             GGV`^(^^  `      `%G8/gg`
-                            (G%(   `<(` `   <(38G(`3g3
-                           <3C3(^`    ^<~^^``   ^<<(Gg%
-                          ~g%V3V `  `X3gg8GVVVV^^/3ggg0<
-                          Vg8VC38838$$$$0B0g0@@$$$$33g$V
-                          g003/^`XB$$G%0B00g$@$$@@$$$$$$^
-                         ~0$BB00$$$$@@@$G^.X$@@@@@@@@@@@3
-                         /g$$0B@@gVXCg$$8  X$@@$BGgB@@@@G
-                         V8BG<%0GCVX/(/8V  C0g3V388g$@0BB
-                         %80%^^(CG8g8%CC3%%G0X/XC%888%g$B
-                         XGg$$0GVVVVX<`%@@@@$%CC380$@@@@0
-                         <%%8$$@@$0X~^<X/380B3V3B@@@@@@@B^
-                         `GgG0@@@@B%V<^V(X3XC8g0$@@@@@@@$`
-                          Cg0$@@@@$$@$8g@@B$@@@@@@@@@@@@B
-                      `<//%Gg$@@@@$@B$@@@@@@@@@@@@@@@@@@G
-                    `30$$0g880$@@$$$@$@@@@@@@@@@@@@@@@@$`
-                    3@@$8g0$080B@@@@@@@@@@@@@@@@@@@@@@@$(
-                   <B0GC%G8B$$00$@@@@$$@@@@@@@@@@@@@@@@@0<~
-                  `(08%8G33%0B$BB$@@@@@@@@@@@@@@@@@@@@@@@$0%^
-               ^/C3%%%08G888Gg0B$$$$@@@@@@@@@@@@@@@@@@@@@@@$GX<
-            `<<XCCVXCVC333%G80g880000BBBBBBBBBBBBBBBBBBBBBBB8G83<` ^<`
-          ^(/X/XX/((((<:((/V3CCC3CC333%%%%%%%%%%%%%%%%%%%%%%CVVVVXXCCCV/^
-        ^~<<:(<<^^<<<~^^^^<<<<<((<:((((((((((((((((((((((((<<<<<<<<<(:<(<
-        ```````` ``````     ```````````````````````````````````````````````
-        -->
-	
-        <!-- Set the viewport width to device width for mobile -->
-        <meta name="viewport" content="width=device-width" />
+  <meta charset="utf-8" />
+  <!--                         /G
+                              (8/
+                               XBBV
+        :GggB3~                   <B$$0
+       (G0$@@@$0%(                ^%$$$B3
+       ^<  <B@@@$03X               ^B$$$B0^
+           /g@@$$$8               `g$$BG%`
+           8@@$$0^             (0$$B03`
+           `$@$Bg            ^3B$$B0G^
+            /$B0g            V0$$$Bg~
+             8gX/(             0$$$$BG
+             (B0003           (B$$$$B3
+            3$$$8X          XB$$$00(
+             %BB8%          %$$$00%
+             `88V           G0$00V
+              /C%X^          ^G0Cg/
+               g00B8(        <8V8/
+               X0%Gg00C        ```<
+               `B$B8G%%X    `  `  ^%^
+              (BB3^`  <^  `` `/(``<VBg
+               0g<<<<. `  ` ``<VG8G0(
+               GGV`^(^^  `    `%G8/gg`
+              (G%(   `<(` `   <(38G(`3g3
+               <3C3(^`  ^<~^^``   ^<<(Gg%
+              ~g%V3V `  `X3gg8GVVVV^^/3ggg0<
+              Vg8VC38838$$$$0B0g0@@$$$$33g$V
+              g003/^`XB$$G%0B00g$@$$@@$$$$$$^
+             ~0$BB00$$$$@@@$G^.X$@@@@@@@@@@@3
+             /g$$0B@@gVXCg$$8  X$@@$BGgB@@@@G
+             V8BG<%0GCVX/(/8V  C0g3V388g$@0BB
+             %80%^^(CG8g8%CC3%%G0X/XC%888%g$B
+             XGg$$0GVVVVX<`%@@@@$%CC380$@@@@0
+             <%%8$$@@$0X~^<X/380B3V3B@@@@@@@B^
+             `GgG0@@@@B%V<^V(X3XC8g0$@@@@@@@$`
+              Cg0$@@@@$$@$8g@@B$@@@@@@@@@@@@B
+            `<//%Gg$@@@@$@B$@@@@@@@@@@@@@@@@@@G
+          `30$$0g880$@@$$$@$@@@@@@@@@@@@@@@@@$`
+          3@@$8g0$080B@@@@@@@@@@@@@@@@@@@@@@@$(
+           <B0GC%G8B$$00$@@@@$$@@@@@@@@@@@@@@@@@0<~
+          `(08%8G33%0B$BB$@@@@@@@@@@@@@@@@@@@@@@@$0%^
+         ^/C3%%%08G888Gg0B$$$$@@@@@@@@@@@@@@@@@@@@@@@$GX<
+      `<<XCCVXCVC333%G80g880000BBBBBBBBBBBBBBBBBBBBBBB8G83<` ^<`
+      ^(/X/XX/((((<:((/V3CCC3CC333%%%%%%%%%%%%%%%%%%%%%%CVVVVXXCCCV/^
+    ^~<<:(<<^^<<<~^^^^<<<<<((<:((((((((((((((((((((((((<<<<<<<<<(:<(<
+    ```````` ``````   ```````````````````````````````````````````````
+    -->
 
-        <title>{% block title %}{% endblock %} - Basic Blog</title>
-        
-        <!-- Included CSS Files -->
-        <link rel="stylesheet" href="/media/stylesheets/foundation.css">
-        <link rel="stylesheet" href="/media/stylesheets/jquery.fancybox.css?v=2.0.6" media="screen" />
-        <link rel="stylesheet" href="/media/stylesheets/github.css">
-        <link rel="stylesheet" href="/media/stylesheets/app.css">
-        {% block css %}{% endblock %}
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>{% block title %}{% endblock %} - Basic Blog</title>
+  
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="/media/stylesheets/foundation.css">
+  <link rel="stylesheet" href="/media/stylesheets/jquery.fancybox.css?v=2.0.6" media="screen" />
+  <link rel="stylesheet" href="/media/stylesheets/github.css">
+  <link rel="stylesheet" href="/media/stylesheets/app.css">
+  {% block css %}{% endblock %}
+
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" href="/media/stylesheets/ie.css">
+  <![endif]-->
+  
+  <script src="/media/javascripts/foundation/modernizr.foundation.js"></script>
+  
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  {% block preload_js %}{% endblock %}
+  
+  {% block extra-head %}{% endblock %}
+</head>
+
+<body>
+  <header class="row header">
+    <div class="three columns">
+      <h1><a href="/">Basic Blog</a></h1>
+    </div>
     
-        <!--[if lt IE 9]>
-                <link rel="stylesheet" href="/media/stylesheets/ie.css">
-        <![endif]-->
-        
-        <script src="/media/javascripts/foundation/modernizr.foundation.js"></script>
-        
-        <!-- IE Fix for HTML5 Tags -->
-        <!--[if lt IE 9]>
-                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+    <div class="six columns navigation">
+    </div>
     
-        {% block preload_js %}{% endblock %}
-        
-        {% block extra-head %}{% endblock %}
-    </head>
+    <div class="three columns user-login">
+      <p>{% if user.is_authenticated %}
+      {{ user.username|capfirst }}
+      <a href="/logout/">Log out</a>
+      {% else %}
+      <a href="/login/">Login</a>
+      {% endif %}</p>
+    </div>
+  </header>
+     
+  <div class="row content">
+    <div class="nine columns">
+    
+      {% block content-header %}
+        {% if error %}<div class="error">{{ error }}</div>{% endif %}
+        {% if info %}<div class="info">{{ info }}</div>{% endif %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="info">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endblock %}
 
-    <body>
-        <header class="row header">
-            <div class="three columns">
-                <h1><a href="/">Basic Blog</a></h1>
-            </div>
-            
-            <div class="eight columns navigation">
-                <ul class="nav-bar">
-                    <li><a href="/">Home</a></li>
-                    {% if user.is_authenticated %}
-                    <li><a href="/logout/">Log out</a></li>
-                    {% else %}
-                    <li><a href="/login/">Login</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-            
-            <div class="one columns text-right hide-for-small">
-                {% if user.is_authenticated %}
-                {{ user.username }}
-                {% endif %}
-            </div>
-        </header>
-         
-        <div class="row content">
-            <div class="twelve columns">
-            
-                {% block content-header %}
-                    {% if error %}<div class="error">{{ error }}</div>{% endif %}
-                    {% if info %}<div class="info">{{ info }}</div>{% endif %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="info">{{ message }}</div>
-                        {% endfor %}
-                    {% endif %}
-                {% endblock %}
+      {% block content %}{% endblock %}
+    </div>
+    
+    <div class="three columns sidebar">
+      {% block sidebar %}
+      <h3>Sidebar</h3>
+      {% endblock %}
+    </div>
+  </div>
+  
+  <footer class="row footer hide-for-small">
+    <div class="twelve columns">
+      
+      <p>&copy; {% now "Y" %} Damian Mullins</p>
+      
+    </div>
+  </footer>
+  
+  <!-- Included JS Files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="/media/javascripts/highlight.pack.js"></script>
+  <script src="/media/javascripts/jquery.fancybox.pack.js?v=2.0.6"></script>
+  <script src="/media/javascripts/stripe.js"></script>
+  <script src="/media/javascripts/app.js"></script>
+  
+  <!-- Excluded JS Files
+  <script src="javascripts/foundation/jquery.reveal.js"></script>
+  <script src="javascripts/foundation/jquery.orbit-1.4.0.js"></script>
+  <script src="javascripts/foundation/jquery.customforms.js"></script>
+  <script src="javascripts/foundation/jquery.placeholder.min.js"></script>
+  <script src="javascripts/foundation/jquery.tooltips.js"></script>
+   -->
 
-                {% block content %}{% endblock %}
-            </div>
-            
-            <!--<div id="sidebar" class="column">
-            {% block sidebar %}
-            {% endblock %}
-            </div>-->
-        </div>
-        
-        <footer class="row footer hide-for-small">
-            <div class="twelve columns">
-                
-                <p>&copy; Damian Mullins {% now "Y" %}</p>
-                
-            </div>
-        </footer>
-        
-        <!-- Included JS Files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script src="/media/javascripts/highlight.pack.js"></script>
-        <script src="/media/javascripts/jquery.fancybox.pack.js?v=2.0.6"></script>
-        <script src="/media/javascripts/stripe.js"></script>
-        <script src="/media/javascripts/app.js"></script>
-        
-        <!-- Excluded JS Files
-        <script src="javascripts/foundation/jquery.reveal.js"></script>
-        <script src="javascripts/foundation/jquery.orbit-1.4.0.js"></script>
-        <script src="javascripts/foundation/jquery.customforms.js"></script>
-        <script src="javascripts/foundation/jquery.placeholder.min.js"></script>
-        <script src="javascripts/foundation/jquery.tooltips.js"></script>
-         -->
-
-        {% block js %}{% endblock %}
-    </body>
+  {% block js %}{% endblock %}
+</body>
 </html>
