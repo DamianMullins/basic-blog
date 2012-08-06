@@ -5,6 +5,6 @@
 
 jQuery(document).ready(function ($) {
 
-  stripe.init();
+  
 
 });
