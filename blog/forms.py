@@ -1,5 +1,6 @@
 from models import Post
 from django import forms
+from django.template.defaultfilters import slugify
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -8,6 +9,7 @@ class PostForm(forms.ModelForm):
 
     def save(self, user, commit = True):
         post = super(PostForm, self).save(commit = False)
+        post.url = slugify(post.url)
         post.created_by = user
 
         if commit:
