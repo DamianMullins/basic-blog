@@ -11,6 +11,7 @@ $shaded: #f4f4f4;
 :: Header
 :: Navigation
 :: Content
+::   Sidebar
 :: Footer
 :: Helpers
 :: Mobile
@@ -27,7 +28,7 @@ $shaded: #f4f4f4;
 @import url(http://fonts.googleapis.com/css?family=Bitter);
 
 html {
-
+   background-color: #555;
 }
 
 body {
@@ -133,7 +134,7 @@ ul {
   z-index: 1;
   
   h1 {
-    margin-top: 10px;
+    margin: 10px 0;
     
     a {
         color: #333;
@@ -142,6 +143,10 @@ ul {
   
   img {
     width: 150px;
+  }
+  
+  .user-login {
+    text-align: right;
   }
 }
 
@@ -184,69 +189,53 @@ ul {
 
 .content {
   background-color: #fff;
-  padding: 75px 40px 50px;
+  padding: 75px 0 50px 40px;
   
-  code {
-    @include border-radius(5px);
-  }
-  
-  .code-sample {
-    @extend code; 
-    background-color: $shaded;
-    margin: 0 0 10px;
-  }
-  .correct {
-    @extend .code-sample;
-    background-color: #e4f4e1;
-    
-    code {
-      background-color: #fff;
-    }
-  }
-  .incorrect {
-    @extend .code-sample;
-    background-color: #f4e1e1;
-    
-    code {
-      background-color: #fff;
-    }
-  }
-  
-  section {
-    @extend .underline;
-    margin-bottom: 28px;
-    padding-bottom: 28px;
-    
-    &:last-child {
-      border: none;
-      margin-bottom: 0;
-      padding-bottom: 6px;
-    }
-  }
-  
-  h4.sample-heading {
-    margin-bottom: -7px;
-  }
-  
-  figure {
-    //@include box-shadow(rgba(#ccc, 0.4) 0 0 25px);
-    @include border-radius(5px);
-    border: 2px solid $shaded;
-    padding: 10px;
+  h2 {
+    margin-bottom: 5px;
     
     a {
-      margin: 0;
     
-      img {
-        border: 1px solid #eee;
+      &:hover {
+        text-decoration: underline;
       }
     }
+  }
+  
+  article {
     
-    figcaption {
-      font-style: italic;
-      margin: 10px 0 0;
-      text-align: left;
+  }
+  
+  .post-list {
+  
+    article {
+      margin-bottom: 50px;
     }
+  }
+  
+  .meta {
+    margin-bottom: 20px;
+    
+    .who-when {
+    
+      .author {
+        color: #666;
+      }
+      
+      .published {
+        color: #bbb;
+      }
+    }
+  }
+  
+  
+  
+  /* -----------------------------------------
+    Sidebar
+  ----------------------------------------- */
+  
+  .sidebar {
+    background-color: #ccc;
   }
 }
 
@@ -260,9 +249,9 @@ ul {
   background-color: #555;
   color: #fff;
   padding: 20px 40px;
-  position: fixed;
-      bottom: 0;
-      left: 0;
+  //position: fixed;
+  //    bottom: 0;
+  //    left: 0;
   
   ul {
     list-style-type: none;
@@ -343,6 +332,10 @@ ul {
   .header {
     padding: 0;
     position: relative;
+    
+    .user-login {
+      text-align: left;
+    }
   }
   
   
