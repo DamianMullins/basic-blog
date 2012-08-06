@@ -5,10 +5,14 @@
 {% endblock %}
 
 {% block content %}
-    <form action="{% url blog.views.new_post %}" method="post" accept-charset="utf-8" class="yui-skin-sam">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <p><input type="submit" value="Post!"/></p>
+    <form action="{% url blog.views.new_post %}" method="post" accept-charset="utf-8" class="yui-skin-sam">{% csrf_token %}
+      <div class="row">
+        <div class="six columns">
+          {{ form.as_p }}
+        
+          <p><input type="submit" value="Post!" class="small button" /></p>
+        </div>
+      </div>
     </form>
 {% endblock %}
 
@@ -23,10 +27,24 @@
 
 <script>
 var myEditor = new YAHOO.widget.SimpleEditor('id_content', {
-    handleSubmit: true,
     height: '200px',
-    width: '600px'
+    width: '100%',
+    handleSubmit: true, 
+    toolbar: {
+        //titlebar: 'My Editor',
+        buttons: [
+            { group: 'textstyle', label: 'Font Style',
+                buttons: [
+                    { type: 'push', label: 'Bold', value: 'bold' },
+                    { type: 'push', label: 'Italic', value: 'italic' },
+                    { type: 'push', label: 'Underline', value: 'underline' }
+                ]
+            }
+        ]
+    }
 });
 myEditor.render();
+
+
 </script>
 {% endblock %}
