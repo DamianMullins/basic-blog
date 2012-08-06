@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block content %}
-    <form action="{% url blog.views.new_post %}" method="post" accept-charset="utf-8" class="yui-skin-sam">{% csrf_token %}
-      <div class="row">
-        <div class="six columns">
-          {{ form.as_p }}
-        
-          <p><input type="submit" value="Post!" class="small button" /></p>
-        </div>
-      </div>
-    </form>
+<form action="{% url blog.views.new_post %}" method="post" accept-charset="utf-8" class="yui-skin-sam">{% csrf_token %}
+  <div class="row">
+    <div class="six columns">
+      {{ form.as_p }}
+    
+      <p><input type="submit" value="Add Post" class="small button" /></p>
+    </div>
+  </div>
+</form>
 {% endblock %}
 
 {% block js %}
