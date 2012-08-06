@@ -3,11 +3,17 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    <h2>{{ post.title }}</h2>
-    
-    {% autoescape off %}
-    {{ post.content }}
-    {% endautoescape %}
-    
-    <p>Written by {{ post.created_by.username }}, {{ post.created|date:"F j, Y" }}</p>
+<article>
+  <h2><a href="/{{ post.url }}/">{{ post.title }}</a></h2>
+  <div class="meta h2">
+    <div class="who-when">
+      <span class="author vcard fn">{{ post.created_by.username|capfirst }}</span>
+      <span class="published" title="{{ post.created|date:"c" }}">{{ post.created|date:"F d, Y" }}</span>
+    </div>
+  </div>
+  
+  {% autoescape off %}
+  {{ post.content }}
+  {% endautoescape %}
+</article>
 {% endblock %}

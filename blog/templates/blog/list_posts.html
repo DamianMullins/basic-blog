@@ -5,15 +5,21 @@
 {% block heading %}Posts{% endblock %}
 
 {% block content %}
-    {% for post in posts %}
+  {% for post in posts %}
+  <div class="post-list">
     <article>
-        <h2><a href="/post/{{ post.url }}/">{{ post.title }}</a></h2>
-        
-        {% autoescape off %}
-        {{ post.content }}
-        {% endautoescape %}
-        
-        <p>Written by {{ post.created_by.username }}, {{ post.created|date:"F j, Y" }}</p>
+      <h2><a href="/{{ post.url }}/">{{ post.title }}</a></h2>
+      <div class="meta h2">
+        <div class="who-when">
+          <span class="author vcard fn">{{ post.created_by.username|capfirst }}</span>
+          <span class="published" title="{{ post.created|date:"c" }}">{{ post.created|date:"F d, Y" }}</span>
+        </div>
+      </div>
+      
+      {% autoescape off %}
+      {{ post.content }}
+      {% endautoescape %}
     </article>
-    {% endfor %}
+  </div>
+  {% endfor %}
 {% endblock %}
