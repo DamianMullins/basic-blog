@@ -2,8 +2,6 @@
 
 {% block title %}Posts{% endblock %}
 
-{% block heading %}Posts{% endblock %}
-
 {% block content %}
 <div class="post-list">
 {% for post in posts %}
@@ -20,7 +18,7 @@
     </div>
     
     {% autoescape off %}
-    {{ post.content }}
+      {{ post.content|linebreaks }}
     {% endautoescape %}
   </article>
 {% endfor %}

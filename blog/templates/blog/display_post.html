@@ -16,7 +16,7 @@
   </div>
   
   {% autoescape off %}
-  {{ post.content }}
+    {{ post.content|linebreaks }}
   {% endautoescape %}
 </article>
 {% endblock %}
