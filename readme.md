@@ -1,5 +1,5 @@
 ##Basic Blog
 
-Test app built whilst learning python and django
+App built whilst learning Python and Django.
 
 Visit <http://basic-blog.appspot.com/> to view a running copy.
