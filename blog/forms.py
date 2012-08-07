@@ -18,10 +18,9 @@ class PostForm(forms.ModelForm):
         return post
         
         
+    """
     def clean_url(self):
-        """
-        Check that submitted URL is unique and allowed
-        """
+        #Check that submitted URL is unique and allowed
         INVALID_URLS = ('about', 'admin', 'register')    
         url = self.cleaned_data['url']
         
@@ -36,3 +35,4 @@ class PostForm(forms.ModelForm):
             raise forms.ValidationError(u'%s is not a valid url' % url )
     
         return url
+        """
