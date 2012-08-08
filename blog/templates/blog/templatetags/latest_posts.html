@@ -1,6 +1,6 @@
 <h3>Latest Posts</h3>
 
-<ul>
+<ul class="latest-post-list">
   {% for post in posts %}
     {% ifchanged %}<li><h4>{{ post.pub_date|date:"F" }}</h4></li>{% endifchanged %}
     <li><a href="/{{ post.url }}/">{{ post.title }}</a></li>
