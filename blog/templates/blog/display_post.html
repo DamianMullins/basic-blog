@@ -16,7 +16,7 @@
   </div>
   
   {% autoescape off %}
-    {{ post.content|linebreaks }}
+    {{ post.content|linebreaks|removetags:"div span b h1 img h1 h2 script style"|safe }}
   {% endautoescape %}
 </article>
 {% endblock %}
