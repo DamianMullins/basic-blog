@@ -42,13 +42,16 @@
     <div class="six columns navigation">
     </div>
     
-    <div class="three columns user-login">
-      <p>{% if user.is_authenticated %}
-      {{ user.username|capfirst }}
-      <a href="/logout/">Log out</a>
-      {% else %}
-      <a href="/login/">Login</a>
-      {% endif %}</p>
+    <div class="three columns user-options">
+      <ul>
+        {% if user.is_authenticated %}
+        <li><a href="/logout/">Log out</a></li>
+        <li><a href="/new/">New Post</a></li>
+        <li>{{ user.username|capfirst }}</li>
+        {% else %}
+        <li><a href="/login/">Login</a></li>
+        {% endif %}
+      </ul>
     </div>
   </header>
      
@@ -56,26 +59,29 @@
     <div class="nine columns">
     
       {% block content-header %}
-        {% if error %}<div class="error">{{ error }}</div>{% endif %}
-        {% if info %}<div class="info">{{ info }}</div>{% endif %}
-        {% if messages %}
-          {% for message in messages %}
-            <div class="info">{{ message }}</div>
-          {% endfor %}
-        {% endif %}
       {% endblock %}
+      
+      {% if error %}<div class="error">{{ error }}</div>{% endif %}
+      {% if info %}<div class="info">{{ info }}</div>{% endif %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="info">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
 
-      {% block content %}{% endblock %}
+      {% block content %}
+      {% endblock %}
     </div>
     
-    <div class="three columns sidebar">
+    <div class="three columns sidebar hide-for-small">
       {% block sidebar %}
-      <h3>Sidebar</h3>
+        {% load blog_extras %}
+        {% latest_posts 5 %}
       {% endblock %}
     </div>
   </div>
   
-  <footer class="row footer hide-for-small">
+  <footer class="row footer">
     <div class="twelve columns">
       
       <p>&copy; {% now "Y" %} Damian Mullins</p>
