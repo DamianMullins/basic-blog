@@ -5,7 +5,12 @@ from django.template.defaultfilters import slugify
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ('created_by',)
+        fields = ('title', 'url', 'content')
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'short'}),
+            'url': forms.TextInput(attrs={'class': 'short'}),
+            'content': forms.Textarea(attrs={'rows': 15}),
+        }
 
     def save(self, user, commit = True):
         post = super(PostForm, self).save(commit = False)
