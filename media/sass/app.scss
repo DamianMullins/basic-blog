@@ -1,3 +1,11 @@
+// Compass imports
+@import "compass/css3"; 
+@import "compass/utilities";
+
+// Variables
+$mainColor: #b14C59;
+$shaded: #f4f4f4;
+
 /* --------------------------------------------------
    Table of Contents
 -----------------------------------------------------
@@ -9,18 +17,12 @@
 ::   Sidebar
 :: Footer
 :: Helpers
+:: Overrides
 :: Mobile
 ::   Shared Styles
 ::   Header
 ::   Content
 */
-
-// Compass imports
-@import "compass/css3"; 
-@import "compass/utilities";
-
-// Variables
-$shaded: #f4f4f4;
 
 
 /* -----------------------------------------
@@ -30,11 +32,12 @@ $shaded: #f4f4f4;
 @import url(http://fonts.googleapis.com/css?family=Bitter);
 
 html {
-  
+  background: url("../images/ngc-346.jpg") repeat-x scroll 0 0 #000;
+  @include background-size(100% 800px);
 }
 
 body {
-  background-color: #fff;
+  background-color: transparent;
   color: #333;
   font:  {
     family: 'Bitter', Georgia, "Times New Roman", Times, serif;
@@ -42,10 +45,6 @@ body {
   }
   position: static;
 }
-
-  .container {
-    padding: 1;
-  }
   
 h1, .h1,
 h2, .h2,
@@ -119,16 +118,16 @@ ul {
 ----------------------------------------- */
 
 .header {
-  @include box-shadow(#ccc 0px 5px 25px);
-  background-color: $shaded;
+  //background-color: $shaded;
   padding: 10px 20px;
   z-index: 1;
   
   h1 {
+    font-size: 2.5em;
     margin: 10px 0;
     
     a {
-        color: #333;
+        color: #fff;
     }
   }
   
@@ -179,9 +178,15 @@ ul {
     
     ul {
       list-style-type: none;
+      margin-top: 10px;
     
       li {
+        color: #fff;
         float: right;
+        
+        a {
+          color: #fff;
+        }
       }
     }
   }
@@ -194,6 +199,7 @@ ul {
 ----------------------------------------- */
 
 .content {
+  @include border-radius(4px);
   background-color: #fff;
   padding: 30px 20px;
   
@@ -230,12 +236,16 @@ ul {
   }
   
   .meta {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     
     .who-when {
-    
+      padding-left: 40px;
+      position: relative;
+      
       .gravatar {
-        color: #666;
+        position: absolute;
+          top: 5px;
+          left: 0;
       }
       
       .author {
@@ -254,10 +264,13 @@ ul {
   ----------------------------------------- */
   
   .sidebar {
+    @include border-radius(4px);
     background-color: #f4f4f4;
     
     h3 {
-    
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
     }
     
     .latest-post-list {
@@ -268,7 +281,7 @@ ul {
         
         h4 {
           font-style: normal;
-          margin: 0 0 6px;
+          margin: 24px 0 6px;
         }
       }
     }
@@ -282,10 +295,7 @@ ul {
 ----------------------------------------- */
 
 .footer {
-  //@include box-shadow(#ccc 0px 5px 25px);
-  background-color: #f4f4f4;
-  border-top: 1px solid #f4f4f4;
-  color: #333;
+  color: #fff;
   padding: 20px;
   
   ul {
@@ -307,6 +317,16 @@ ul {
   p:last-child {
     margin-bottom: 0;
   }
+}
+
+
+
+/* -----------------------------------------
+   Overrides 
+----------------------------------------- */
+
+textarea {
+  font-family: inherit;
 }
 
 
@@ -338,6 +358,10 @@ ul {
   padding-top: 20px;
 }
 
+input.short {
+  width: 50%;
+}
+
 
 
 /* -----------------------------------------
@@ -349,6 +373,11 @@ ul {
   /* -----------------------------------------
      Shared Styles
   ----------------------------------------- */
+  
+  html {
+    background-color: #fff;
+    background-image: none;
+  }
   
   h3, .h3 {
     
@@ -365,11 +394,33 @@ ul {
   ----------------------------------------- */
   
   .header {
+    background-color: $mainColor;
     padding: 0;
     position: relative;
     
     .user-login {
       text-align: left;
+    }
+    
+    
+    /* -----------------------------------------
+      User Options
+    ----------------------------------------- */
+    
+    .user-options {
+      float: right;
+      
+      ul {
+      
+        li {
+          float: left;
+          margin: 0 25px 20px 0;
+          
+          a {
+          
+          }
+        }
+      }
     }
   }
   
@@ -380,6 +431,7 @@ ul {
   ----------------------------------------- */
   
   .content {
+    @include border-radius(0);
     padding: 20px 0;
       
     figure {
@@ -390,6 +442,28 @@ ul {
       overflow: auto;
     }
     
+  }
+  
+  
+  
+  /* -----------------------------------------
+    Footer
+  ----------------------------------------- */
+  
+  .footer {
+    background-color: #fff;
+    color: #333;
+    padding: 0 0 12px;
+  }
+  
+  
+  
+  /* -----------------------------------------
+     Helpers
+  ----------------------------------------- */
+  
+  input.short {
+    width: 100%;
   }
 
 }
