@@ -35,14 +35,14 @@
 
 <body>
   <header class="row header">
-    <div class="three columns">
+    <div class="five columns">
       <h1><a href="/">Basic Blog</a></h1>
     </div>
     
-    <div class="six columns navigation">
+    <div class="three columns navigation">
     </div>
     
-    <div class="three columns user-options">
+    <div class="four columns user-options">
       <ul>
         {% if user.is_authenticated %}
         <li><a href="/logout/">Log out</a></li>
@@ -54,7 +54,7 @@
       </ul>
     </div>
   </header>
-     
+ 
   <div class="row content">
     <div class="nine columns">
     
