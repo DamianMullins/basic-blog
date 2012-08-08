@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load gravatar %}
+{% load markup %}
 
 {% block title %}Posts{% endblock %}
 
@@ -20,7 +21,7 @@
     </div>
     
     {% autoescape off %}
-      {{ post.content|linebreaks|removetags:"div span b h1 img h1 h2 script style"|safe }}
+      {{ post.content|markdown|removetags:"img h1 h2"|safe }}
     {% endautoescape %}
   </article>
 {% endfor %}
