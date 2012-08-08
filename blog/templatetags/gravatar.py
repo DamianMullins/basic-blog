@@ -1,3 +1,11 @@
+from django import template
+from django.utils.html import escape
+from django.contrib.auth.models import User
+from django.conf import settings
+from django.utils.hashcompat import md5_constructor
+
+import urllib
+
 """
 Copyright (c) 2008, James Tauber
 All rights reserved.
@@ -28,14 +36,6 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
-
-from django import template
-from django.utils.html import escape
-from django.contrib.auth.models import User
-from django.conf import settings
-from django.utils.hashcompat import md5_constructor
-
-import urllib
 
 GRAVATAR_URL_PREFIX = getattr(settings, "GRAVATAR_URL_PREFIX", "http://www.gravatar.com/")
 GRAVATAR_DEFAULT_IMAGE = getattr(settings, "GRAVATAR_DEFAULT_IMAGE", "")
