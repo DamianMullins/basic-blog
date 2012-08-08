@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load gravatar %}
 
 {% block title %}Posts{% endblock %}
 
@@ -12,6 +13,7 @@
     {% endspaceless %}
     <div class="meta h2">
       <div class="who-when">
+        <span class="gravatar">{% gravatar_img_for_email post.created_by.email 32 %}</span>
         <span class="author vcard fn">{{ post.created_by.username|capfirst }}</span>
         <span class="published" title="{{ post.pub_date|date:"c" }}">{{ post.pub_date|date:"F d, Y" }}</span>
       </div>
