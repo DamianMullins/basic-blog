@@ -61,7 +61,7 @@ def list_posts(request):
 
 def display_post(request, post_url):
     """
-    Display a post
+    Display a single post
     """
     post = get_object_or_404(Post, url=post_url)
     
