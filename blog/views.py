@@ -9,9 +9,7 @@ from models import Post
 
 @login_required
 def new_post(request):
-    """
-    Add a new post
-    """
+    "Add a new post"
     form = PostForm()
     
     if request.method == 'POST':
@@ -28,9 +26,7 @@ def new_post(request):
 
 @login_required
 def edit_post(request, post_url):
-    """
-    Edit an existing post
-    """
+    "Edit an existing post"
     post = get_object_or_404(Post, url=post_url)
     form = PostForm(instance=post)
     
@@ -49,9 +45,7 @@ def edit_post(request, post_url):
 
 
 def list_posts(request):
-    """
-    List all active posts with a publish date in the past
-    """
+    "List all active posts with a publish date in the past"
     posts = Post.objects.filter(pub_date__lte=datetime.now()).order_by('-pub_date')
     
     return render_to_response('blog/list_posts.html', 
@@ -60,9 +54,7 @@ def list_posts(request):
 
 
 def display_post(request, post_url):
-    """
-    Display a single post
-    """
+    "Display a single post"
     post = get_object_or_404(Post, url=post_url)
     
     return render_to_response('blog/display_post.html', 
