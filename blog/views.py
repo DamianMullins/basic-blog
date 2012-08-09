@@ -11,6 +11,8 @@ from models import Post
 def new_post(request):
     "Add a new post"
     form = PostForm()
+    button_text = 'Insert'
+    instructions_template = 'blog/includes/insert_post_instructions.html'
     
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -19,7 +21,7 @@ def new_post(request):
             form.save(request.user)
             return HttpResponseRedirect(reverse('blog.views.list_posts'))
             
-    return render_to_response('blog/new_post.html', 
+    return render_to_response('blog/edit_form.html', 
                               locals(), 
                               context_instance=RequestContext(request))
 
@@ -29,6 +31,8 @@ def edit_post(request, post_url):
     "Edit an existing post"
     post = get_object_or_404(Post, url=post_url)
     form = PostForm(instance=post)
+    button_text = 'Update'
+    instructions_template = 'blog/includes/edit_post_instructions.html'
     
     if request.method == 'POST':
         post = get_object_or_404(Post, url=post_url)
@@ -39,7 +43,7 @@ def edit_post(request, post_url):
             return HttpResponseRedirect(reverse('blog.views.display_post', 
                                         args=(post.url,)))
         
-    return render_to_response('blog/edit_post.html', 
+    return render_to_response('blog/edit_form.html', 
                               locals(), 
                               context_instance=RequestContext(request))
 

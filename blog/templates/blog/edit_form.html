@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}New Post{% endblock %}
+{% block title %}Edit {{ post.title }}{% endblock %}
 
 {% block extra-head %}
 <link rel="stylesheet" href="http://yui.yahooapis.com/2.9.0/build/assets/skins/sam/skin.css">
@@ -9,13 +9,11 @@
 {% block content %}
 <form action="" method="post" accept-charset="utf-8" class="yui-skin-sam">{% csrf_token %}
   {{ form.as_p }}
-  
-  <p><input type="submit" value="Add Post" class="small button" /></p>
+
+  <p><input type="submit" value="{{ button_text }} Post" class="small button" /></p>
 </form>
 {% endblock %}
 
 {% block sidebar %}
-<h3>Add a new post</h3>
-<p>Content is formatted using the Markdown formatting syntax, allows all formatting except the <strong>h1 &amp; h2</strong> tags.</p>
-<p>Hit <strong>Add Post</strong> when you're all done.</p>
+{% include instructions_template %}
 {% endblock %}
