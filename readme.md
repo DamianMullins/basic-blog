@@ -2,4 +2,4 @@
 
 App built whilst learning Python and Django.
 
-Visit <http://basic-blog.appspot.com/> to view a running copy.
+Visit [basic-blog.appspot.com](http://basic-blog.appspot.com/) to view a running copy.
