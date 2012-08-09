@@ -15,5 +15,8 @@ jQuery(document).ready(function ($) {
        $("input[name=url]").val(text);       
      });
   }
-
+	
+	$('.delete').click(function() {
+		return confirm('Last chance! Are you sure you would like to delete this post?');
+	})
 });
