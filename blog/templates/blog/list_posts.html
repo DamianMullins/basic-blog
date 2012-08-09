@@ -28,6 +28,13 @@
       {{ post.content|markdown|removetags:"img h1 h2"|safe }}
     {% endautoescape %}
   </article>
+{% empty %}
+  <h2>Uh oh...</h2>
+  <p>It looks like there aren't any posts here yet!</p>
+  
+  {% if user.is_authenticated %}
+    <p>Why not <a href="/new">add a post</a> to get things rolling?</p>
+  {% endif %}
 {% endfor %}
 </div>
 {% endblock %}
