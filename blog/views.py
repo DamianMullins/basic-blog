@@ -33,17 +33,35 @@ def edit_post(request, post_url):
     form = PostForm(instance=post)
     button_text = 'Update'
     instructions_template = 'blog/includes/edit_post_instructions.html'
-    
+		
     if request.method == 'POST':
         post = get_object_or_404(Post, url=post_url)
         form = PostForm(request.POST, instance=post)
-    
+				
         if form.is_valid():
             form.save(request.user)
             return HttpResponseRedirect(reverse('blog.views.display_post', 
                                         args=(post.url,)))
-        
+																				
     return render_to_response('blog/edit_form.html', 
+                              locals(), 
+                              context_instance=RequestContext(request))
+
+
+@login_required
+def delete_post(request, post_url):
+    "Delete an existing post"
+    post = get_object_or_404(Post, url=post_url)
+    form = PostForm(instance=post)
+
+    if request.method == 'POST':
+        post = get_object_or_404(Post, url=post_url)
+        form = PostForm(request.POST, instance=post)
+
+        post.delete()
+        return HttpResponseRedirect(reverse('blog.views.list_posts'))
+
+    return render_to_response('blog/delete_post.html', 
                               locals(), 
                               context_instance=RequestContext(request))
 
