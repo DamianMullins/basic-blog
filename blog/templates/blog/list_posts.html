@@ -10,7 +10,11 @@
   <article>
     {% spaceless %}
     <h2><a href="/{{ post.url }}/">{{ post.title }}</a> 
-      {% if user.is_authenticated %}<a href="/{{ post.url }}/edit/" class="edit-post">Edit</a>{% endif %}</h2>
+      {% if user.is_authenticated %}
+        <a href="/{{ post.url }}/edit/" class="admin-action">Edit</a>
+        <a href="/{{ post.url }}/delete/" class="admin-action">Delete</a>
+      {% endif %}
+    </h2>
     {% endspaceless %}
     <div class="meta h2">
       <div class="who-when">
