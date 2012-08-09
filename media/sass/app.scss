@@ -205,8 +205,7 @@ ul {
   
   article {
     
-    
-    &:hover a.edit-post {
+    &:hover a.admin-action {
       display: inline-block;
     }
       
@@ -219,10 +218,11 @@ ul {
           text-decoration: underline;
         }
         
-        &.edit-post {
+        &.admin-action {
           display: none;
           float: right;
           font-size: 0.6em;
+					margin-left: 12px;
         }
       }
     }
@@ -236,7 +236,7 @@ ul {
   }
   
   .meta {
-    margin-bottom: 24px;
+    margin-bottom: 48px;
     
     .who-when {
       padding-left: 40px;
@@ -283,6 +283,16 @@ ul {
           font-style: normal;
           margin: 24px 0 6px;
         }
+				
+				a {
+					border-bottom: 1px solid #eee;
+			    display: block;
+			    margin-bottom: 12px;
+			    padding-bottom: 12px;
+				}
+				a:last-child {
+					border: none;
+				}
       }
     }
   }
@@ -433,15 +443,19 @@ input.short {
   .content {
     @include border-radius(0);
     padding: 20px 0;
-      
-    figure {
-      margin: 0;
-    }
-    
-    code {
-      overflow: auto;
-    }
-    
+
+	  article {
+
+	    h2 {
+
+	      a {
+
+	        &.admin-action {
+	          display: inline-block;
+	        }
+	      }
+	    }
+	  }
   }
   
   
