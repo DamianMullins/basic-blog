@@ -24,10 +24,8 @@
         <span class="published" title="{{ post.pub_date|date:"c" }}">{{ post.pub_date|date:"F d, Y" }}</span>
       </div>
     </div>
-    
-    {% autoescape off %}
-      {{ post.content|markdown|removetags:"img h1 h2 link"|stripjs|safe }}
-    {% endautoescape %}
+
+    {{ post.content|markdown:"safe"|removetags:"h1 h2" }}
   </article>
 {% empty %}
   <h2>Uh oh...</h2>

@@ -23,8 +23,7 @@
     </div>
   </div>
   
-  {% autoescape off %}
-    {{ post.content|markdown|removetags:"img h1 h2 link"|stripjs|safe }}
-  {% endautoescape %}
+  {{ post.content|markdown:"safe"|removetags:"h1 h2" }}
+ 
 </article>
 {% endblock %}
