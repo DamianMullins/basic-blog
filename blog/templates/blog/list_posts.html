@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load gravatar %}
 {% load markup %}
+{% load blog_extras %}
 
 {% block title %}Posts{% endblock %}
 
@@ -25,7 +26,7 @@
     </div>
     
     {% autoescape off %}
-      {{ post.content|markdown|removetags:"img h1 h2"|safe }}
+      {{ post.content|markdown|removetags:"img h1 h2"|stripjs|safe }}
     {% endautoescape %}
   </article>
 {% empty %}
