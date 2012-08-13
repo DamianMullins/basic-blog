@@ -13,11 +13,3 @@ def latest_posts(number_of_posts):
     posts = Post.objects.filter(pub_date__lte=datetime.now()).order_by('-pub_date')[:number_of_posts]
 
     return {'posts':posts}
-
-
-@register.filter
-@stringfilter
-def stripjs(value):
-    stripped = re.sub(r'<script(?:\s[^>]*)?(>(?:.(?!/script>))*</script>|/>)', \
-                      '', force_unicode(value), flags=re.S)
-    return mark_safe(stripped)
