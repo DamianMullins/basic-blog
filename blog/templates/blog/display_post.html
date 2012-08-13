@@ -24,7 +24,7 @@
   </div>
   
   {% autoescape off %}
-    {{ post.content|markdown|removetags:"img h1 h2"|stripjs|safe }}
+    {{ post.content|markdown|removetags:"img h1 h2 link"|stripjs|safe }}
   {% endautoescape %}
 </article>
 {% endblock %}
