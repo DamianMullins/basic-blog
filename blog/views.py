@@ -19,7 +19,8 @@ def new_post(request):
         
         if form.is_valid():
             form.save(request.user)
-            return HttpResponseRedirect(reverse('blog.views.list_posts'))
+            return HttpResponseRedirect(reverse('blog.views.display_post', 
+                                        args=(request.REQUEST["url"],)))
             
     return render_to_response('blog/edit_form.html', 
                               locals(), 
